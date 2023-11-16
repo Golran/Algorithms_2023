@@ -1,7 +1,14 @@
-﻿namespace Algorithms;
+﻿using System;
+
+namespace Algorithms;
 
 public static class SortingAlgorithms
 {
+	public static void BaseSort(int[] array)
+	{
+		Array.Sort(array);
+	}
+
 	#region BubbleSort
 
 	public static void BubbleSort(int[] array)
@@ -18,6 +25,8 @@ public static class SortingAlgorithms
 
 	public static void MergeSort(int[] array)
 	{
+		if (array.Length == 0)
+			return;
 		var temporaryArray = new int[array.Length];
 		MergeSort(array, 0, array.Length - 1, temporaryArray);
 	}
@@ -60,6 +69,8 @@ public static class SortingAlgorithms
 
 	public static void HoareSort(int[] array)
 	{
+		if (array.Length == 0)
+			return;
 		HoareSort(array, 0, array.Length - 1);
 	}
 
